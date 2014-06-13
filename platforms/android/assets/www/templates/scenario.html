@@ -1,1 +1,28 @@
-Scedule
+<div id="grid">
+    <div id="leftHeader">
+        <table>
+            <tbody>
+                <tr ng-repeat="lh in grid.leftHeader"><td>{{lh.txt}}</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="header">
+        <table >
+            <thead>
+                <tr>
+                    <th ng-repeat="td in grid.header" >{{td.txt}}
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div id="content">
+        <table>
+            <tbody>
+                <tr ng-repeat="row in grid.body" >
+                    <td ng-repeat="td in row" ng-click="td.on=!td.on">{{td.txt}}<div class="icon ion-ios7-checkmark-empty" ng-show="td.checked()"></div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

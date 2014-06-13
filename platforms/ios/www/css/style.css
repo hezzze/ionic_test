@@ -1,8 +1,10 @@
 /* Empty. Add your own CSS if you like */
 
 #logo {
-	max-width: 100%;
-	max-height: 100%;
+	max-width: 60%;
+	max-height: 60%;
+	padding-left: 3%;
+	padding-top: 2%;
 }
 
 #navigation-text {

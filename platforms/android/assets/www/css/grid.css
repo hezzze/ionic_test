@@ -1,0 +1,83 @@
+#grid {
+	position: relative;
+}
+
+#grid table {
+	border-collapse: collapse;
+}
+
+#grid #leftHeader {
+	position: absolute;
+	overflow: hidden;
+	left: 1%;
+	top: 4em;
+	padding-bottom: 10px;
+}
+
+#grid #leftHeader>table {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	
+}
+
+#grid #leftHeader td {
+	height: 3em;
+	border-top: 1px solid #c3c3c3;
+	border-bottom: 1px solid #c3c3c3;
+}
+
+#grid #header {
+	position: absolute;
+	left: 8%;
+	top: 0px;
+	overflow: hidden;
+	width: 90%;
+}
+
+#grid #header th {
+	min-width: 3em;
+	max-width: 3em;
+	height: 4em;
+	border-left: 1px solid #c3c3c3;
+	border-right: 1px solid #c3c3c3;
+
+	-webkit-transform: rotate(-90deg);
+  	-moz-transform: rotate(-90deg);
+  	-ms-transform: rotate(-90deg);
+  	-o-transform: rotate(-90deg);
+  	transform: rotate(-90deg);
+}
+
+#grid #header>table {
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+
+#grid #content {
+	position: absolute;
+	left: 8%;
+	top: 4em;
+	overflow-x: scroll;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	width: 90%;
+}
+
+#grid #content>table {
+}
+
+
+#grid #content td:hover {
+	background-color: #FFF590;
+}
+
+#grid #content td {
+	text-align: center;
+	vertical-align: middle;
+	min-width: 3em;
+	max-width: 5em;
+	height: 3em;
+	border: 1px solid #c3c3c3
+}

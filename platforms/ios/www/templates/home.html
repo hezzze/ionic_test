@@ -1,5 +1,5 @@
 <ul class="list list-inset">
-    <a class="item" ui-sref="scenarios">Study 1</a>
-    <a class="item">Study 2</a>
-    <a class="item">Study 3</a>
+    <a ng-repeat="study in studies " class="item" ui-sref="study({studyIndex:{{$index}}})">
+    	{{study.name}}
+    </a>
 </ul>

@@ -6,6 +6,7 @@
         <title></title>
         <link href="lib/ionic/css/ionic.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+        <link href="css/grid.css" rel="stylesheet">
         <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
                                     <link href="css/ionic.app.css" rel="stylesheet">
         -->
@@ -16,26 +17,37 @@
         <!-- your app's js -->
         <script src="js/app.js"></script>
         <script src="js/controllers.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </head>
     <body ng-app="starter">
         <ion-header-bar class="bar-stable">
             <!-- The order has to be like this, since the last element will be put at
             the top -->
+            <!-- <div class="buttons"> -->
+                <a href="#" class="button button-clear icon ion-home">
+                    Medidata 
+                </a>
+                <div ui-view name="nav">
+                </div>
+            <!-- </div> -->
+            <!-- <ion-pane>
             <div class="row">
-                <div class="col col-10">
+                <div class="col col-20">
                     <a href="#"><img id="logo" src="img/Medidata_Logo.png" /></a>
                 </div>
                 <div class="col col-20 col-offset-10">
-                    Welcome !!!
+                    <div ui-view name="navigation"></div>
                 </div>
-            </div>
+            </div> -->
+                <!-- <a href="#"><img id="logo" src="img/Medidata_Logo.png" /></a> -->
+            </ion-pane>
         </ion-header-bar>
-        <ion-content>
-            <div class="row">
-                <div class="col">
-                    <div ui-view name="listContent"></div>
-                </div>
+        <ion-content scroll="false" >
+        <div class="row">
+            <div class="col">
+                <div ui-view name="content"></div>
             </div>
+        </div>
         </ion-content>
     </body>
 </html>

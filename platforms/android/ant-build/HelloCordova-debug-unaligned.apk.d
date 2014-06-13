@@ -1,4 +1,4 @@
-D:\Dropbox\Public\Medidata\sched_proto\platforms\android\ant-build\HelloCordova-debug-unaligned.apk : \
-D:\Dropbox\Public\Medidata\sched_proto\platforms\android\ant-build\HelloCordova.ap_ \
-D:\Dropbox\Public\Medidata\sched_proto\platforms\android\ant-build\classes.dex \
-D:\Dropbox\Public\Medidata\sched_proto\platforms\android\CordovaLib\ant-build\classes.jar \
+/Users/zhe/Documents/ionic_test/platforms/android/ant-build/HelloCordova-debug-unaligned.apk : \
+/Users/zhe/Documents/ionic_test/platforms/android/ant-build/HelloCordova.ap_ \
+/Users/zhe/Documents/ionic_test/platforms/android/ant-build/classes.dex \
+/Users/zhe/Documents/ionic_test/platforms/android/CordovaLib/ant-build/classes.jar \

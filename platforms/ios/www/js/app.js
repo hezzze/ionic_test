@@ -26,26 +26,37 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('home', {
       url: "/home",
       views: {
-        'listContent': {
-          templateUrl: "templates/home.html"
+        'content': {
+          templateUrl: "templates/home.html",
+          controller: 'AppCtrl'
         }
       }
     })
 
-    .state('scenarios', {
-      url: "/scenarios",
+    .state('study', {
+      url: "/study/:studyIndex",
       views: {
-        'listContent': {
-          templateUrl: "templates/scenarios.html"
+        'content': {
+          templateUrl: "templates/study.html",
+          controller: 'StudyCtrl'
+        },
+        'nav': {
+          templateUrl: "templates/nav_study.html",
+          controller: 'StudyCtrl'
         }
       }
     })
 
-    .state('schedule', {
-      url: "/schedule",
+    .state('scenario', {
+      url: "/study/:studyIndex/scenario/:scenarioIndex",
       views: {
-        'listContent' :{
-          templateUrl: "templates/schedule.html"
+        'content' :{
+          templateUrl: "templates/scenario.html",
+          controller: 'ScenarioCtrl'
+        },
+        'nav' :{
+          templateUrl: "templates/nav_scenario.html",
+          controller: 'ScenarioCtrl'
         }
       }
     });

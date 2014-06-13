@@ -1,2 +1,2 @@
-D:\Dropbox\Public\Medidata\sched_proto\platforms\android\ant-build\AndroidManifest.xml : \
-D:\Dropbox\Public\Medidata\sched_proto\platforms\android\AndroidManifest.xml \
+/Users/zhe/Documents/ionic_test/platforms/android/ant-build/AndroidManifest.xml : \
+/Users/zhe/Documents/ionic_test/platforms/android/AndroidManifest.xml \
