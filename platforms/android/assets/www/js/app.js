@@ -33,20 +33,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
-    .state('home.study', {
-      url: "/study",
+    .state('study', {
+      url: "/study/:i",
       views: {
         'listContent': {
-          templateUrl: "templates/study.html"
+          templateUrl: "templates/study.html",
+          controller: 'StudyCtrl'
         }
       }
     })
 
-    .state('home.study.scenario', {
+    .state('scenario', {
       url: "/scenario",
       views: {
         'listContent' :{
-          templateUrl: "templates/scenario.html"
+          templateUrl: "templates/scenario.html",
+          controller: 'ScenarioCtrl'
         }
       }
     });

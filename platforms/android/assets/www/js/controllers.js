@@ -1,23 +1,23 @@
-angular.module('starter.controllers', [])
 
-.controller('AppCtrl', ['$scope','$http', 
-	function($scope, $http) {
-		$http.get('data/studies.json').success(function (data) {
-			$scope.studies = data;
-		})
+
+angular.module('starter.controllers', [])
+.run(['$rootScope','$http',
+  function($rootScope,$http) {
+    $http.get('data/studies.json').success(function (data) {
+      $rootScope.studies = data;
+    });
+
+  }])
+
+.controller('AppCtrl', ['$scope', '$rootScope',
+	function($scope, $rootScope) {
 	}
 ])
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
+.controller('StudyCtrl', ['$scope', '$rootScope', '$stateParams',
+  function($scope, $rootScope, $stateParams) {
+    $scope.study = $rootScope.studies[$stateParams.i];
+  }
+])
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-})
+.controller('ScenarioCtrl', function($scope, $stateParams) { })
