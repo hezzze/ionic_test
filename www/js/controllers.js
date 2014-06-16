@@ -33,29 +33,33 @@ angular.module('starter.controllers', [])
 
     attachGrid($scope);
 
-    $scope.$on('$viewContentLoaded', function() {
+    $(document).ready(function() {
+
+      adjustGridHeight();
 
       //TODO
-      adjustGridHeight();
+      
 
       $(window).bind('resize', adjustGridHeight);
 
-      $('#content').scroll(function() {
+      // $('#content').scroll(function() {
         
-        var top = $(this).scrollTop();
-        var left = $(this).scrollLeft();
-        $('#header>table').css('left', -left );
-        $('#leftHeader>table').css('top', -top);
-      });
+      //   var top = $(this).scrollTop();
+      //   var left = $(this).scrollLeft();
+      //   $('#header>table').css('left', -left );
+      //   $('#leftHeader>table').css('top', -top);
+      // });
     });
   }
 ]);
+
 
 function adjustGridHeight() {
     var height = $(window).height();
     $('#content').css('height', parseInt(height*0.8));
     $('#leftHeader').css('height', parseInt(height*0.75));
 }
+
 
 var NUM_OF_VISITS = 50;
 var NUM_OF_ACTIVITIES = 50;

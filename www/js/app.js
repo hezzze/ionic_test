@@ -62,5 +62,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/home');
+})
+
+.directive('scheduleCell', function() {
+  return function(scope, element, attrs) {
+    if (scope.$first)
+      var myScroll = new IScroll('#content', {
+        bounce: false, 
+        scrollX: true
+      });
+  }
 });
+
+
 

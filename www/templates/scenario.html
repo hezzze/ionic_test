@@ -20,7 +20,7 @@
         <table>
             <tbody>
                 <tr ng-repeat="row in grid.body" >
-                    <td ng-repeat="td in row" ng-click="td.on=!td.on">{{td.txt}}<div class="icon ion-ios7-checkmark-empty" ng-show="td.checked()"></div></td>
+                    <td ng-repeat="td in row" ng-click="td.on=!td.on" schedule-cell>{{td.txt}}<div class="icon ion-ios7-checkmark-empty" ng-show="td.checked()"></div></td>
                 </tr>
             </tbody>
         </table>

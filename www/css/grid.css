@@ -1,5 +1,4 @@
 #grid {
-	position: relative;
 }
 
 #grid table {
@@ -11,11 +10,12 @@
 	overflow: hidden;
 	left: 1%;
 	top: 4em;
+	width: 100%;
 	padding-bottom: 10px;
 }
 
 #grid #leftHeader>table {
-	position: relative;
+	position: absolute;
 	left: 0px;
 	top: 0px;
 	
@@ -33,6 +33,7 @@
 	top: 0px;
 	overflow: hidden;
 	width: 90%;
+	height: 100%;
 }
 
 #grid #header th {
@@ -50,7 +51,7 @@
 }
 
 #grid #header>table {
-	position: relative;
+	position: absolute;
 	left: 0px;
 	top: 0px;
 }
@@ -59,9 +60,8 @@
 	position: absolute;
 	left: 8%;
 	top: 4em;
-	overflow-x: scroll;
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
+/*	overflow-x: scroll;
+	overflow-y: scroll;*/
 	width: 90%;
 }
 
