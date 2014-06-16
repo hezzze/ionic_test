@@ -22,8 +22,8 @@ angular.module('starter.controllers', [])
   }
 ])
 
-.controller('ScenarioCtrl', ['$scope','$rootScope', '$stateParams',
-  function($scope, $rootScope, $stateParams) {
+.controller('ScenarioCtrl', ['$scope','$rootScope', '$stateParams','$ionicModal',
+  function($scope, $rootScope, $stateParams, $ionicModal) {
     var studyIndex = $stateParams.studyIndex;
     var scenarioIndex = $stateParams.scenarioIndex;
 
@@ -33,23 +33,53 @@ angular.module('starter.controllers', [])
 
     attachGrid($scope);
 
-    $(document).ready(function() {
+    $ionicModal.fromTemplateUrl('templates/schedule_modal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function (modal) {
+      $scope.modal = modal;
+    });
 
-      adjustGridHeight();
+    $scope.openModal = function() {
+      $scope.modal.show();
+    }
 
-      //TODO
+    $scope.$on('scheduleGridRendered', function() {
+
+      console.log("!!");
+      myScroll = new IScroll('#content', {
+        bounce: false,
+        scrollX: true,
+        probeType: 3
+      });
+
+      myScroll.on('scroll', function() {
+
+        // $('#header>table').css('left', myScroll.x );
+        // $('#leftHeader>table').css('top', myScroll.y );
+        
+        angular.element(document.querySelector('#header>table')).css({"left": myScroll.x });
+        angular.element(document.querySelector('#leftHeader>table')).css({"top": myScroll.y});
+      })
+    })
+
+    // $(document).ready(function() {
+
+    //   adjustGridHeight();
+
+    //   //TODO
       
 
-      $(window).bind('resize', adjustGridHeight);
+    //   $(window).bind('resize', adjustGridHeight);
 
-      // $('#content').scroll(function() {
+    //   // $('#content').scroll(function() {
         
-      //   var top = $(this).scrollTop();
-      //   var left = $(this).scrollLeft();
-      //   $('#header>table').css('left', -left );
-      //   $('#leftHeader>table').css('top', -top);
-      // });
-    });
+    //   //   var top = $(this).scrollTop();
+    //   //   var left = $(this).scrollLeft();
+    //   //   $('#header>table').css('left', -left );
+    //   //   $('#leftHeader>table').css('top', -top);
+    //   // });
+    // });
   }
 ]);
 
@@ -89,7 +119,15 @@ function attachGrid($scope) {
         row = [];
         grid.leftHeader.push(new Cell('Activity ' + (j + 1), 0));
         for (var k = 0; k < NUM_OF_VISITS; k++) {
+          if  (j == 5 && k == 5) {
+            var cell = new Cell('',0);
+            cell.on = true;
+            row.push(cell);
+          } else {
             row.push(new Cell('', 0));
+          }
+
+            
         }
         grid.body.push(row);
     }
