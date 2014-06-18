@@ -1,9 +1,39 @@
-<div id="grid">
+<!-- version 1b -->
+<div id="grid2">
     <div id="content">
         <table>
             <tbody>
-                <tr ng-repeat="row in grid.body"  >
-                    <td ng-repeat="td in row" grid-loaded>{{td.txt}}<div class="icon ion-ios7-checkmark-empty" ng-click="openModal()" ng-show="td.checked()"></div></td>
+                <tr ng-repeat="row in data.scheduleGrid"  >
+                    <td ng-repeat="td in row" grid-loaded>
+                        <div class="icon ion-ios7-checkmark-empty" ng-click="openModal($parent.$index, $index)" ng-show="td.checked">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ul id="headerList">
+        <li ng-repeat="visit in data.visits" >
+            {{visit.name}}
+        </li>
+    </ul>   
+    <ul id="leftHeaderList">
+        <li ng-repeat="activity in data.activities">
+            {{activity.name}}
+        </li>
+    </ul>
+</div>
+
+<!-- version 1a -->
+<!-- <div id="grid">
+    <div id="content">
+        <table>
+            <tbody>
+                <tr ng-repeat="row in data.scheduleGrid"  >
+                    <td ng-repeat="td in row" grid-loaded>
+                        <div class="icon ion-ios7-checkmark-empty" ng-click="openModal($parent.$index, $index)" ng-show="td.checked">
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -12,7 +42,8 @@
         <table >
             <thead>
                 <tr>
-                    <th ng-repeat="td in grid.header" >{{td.txt}}
+                    <th ng-repeat="visit in data.visits" >
+                        <div>{{visit.name}}</div>
                     </th>
                 </tr>
             </thead>
@@ -21,9 +52,34 @@
     <div id="leftHeader">
         <table>
             <tbody>
-                <tr ng-repeat="lh in grid.leftHeader"><td>{{lh.txt}}</td></tr>
+                <tr ng-repeat="activity in data.activities"><td>{{activity.name}}</td></tr>
             </tbody>
         </table>
     </div>
-    
+</div> -->
+
+
+<!-- version 2 -->
+<!-- <ion-pane id="listsContainer">
+<div class="row">
+        <div class="col">
+                <ion-scroll id="visitList">
+                <div class="list list-inset" >
+                        <a ng-repeat="visit in data.visits" class="item" href="#">{{visit.name}}</a>
+                </div>
+                </ion-scroll>
+        </div>
+        <div class="col">
+                <ion-scroll id="activityList">
+                <div class="list list-inset">
+                        <a ng-repeat="activity in data.activities" class="item" href="#">{{activity.name}}</a>
+                </div>
+                </ion-scroll>
+        </div>
 </div>
+</ion-pane>
+Content!!!!! -->
+
+
+
+

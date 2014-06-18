@@ -3,10 +3,16 @@
 	height: 100%;
 	position: absolute;
 	left: 1em;
+	top: 1em;
 }
 
 #grid table {
 	border-collapse: collapse;
+
+	/*quick and dirty fix for scrolling issues 
+	brought by bootstrap.css*/
+	max-width: none;
+	background-color: #ffffff;
 }
 
 #grid #leftHeader {
@@ -19,11 +25,11 @@
 }
 
 #grid #leftHeader>table {
-	position: absolute;
+	;position: absolute;
 	left: 0px;
 	top: 0px;
 	width: 100%;
-	background-color: #ffffff;
+	background-color: #ffffff
 	
 }
 
@@ -46,10 +52,15 @@
 #grid #header th {
 	min-width: 3em;
 	max-width: 3em;
-	height: 5em;
+	height: 7em;
 	border-left: 1px solid #c3c3c3;
 	border-right: 1px solid #c3c3c3;
 	vertical-align: middle;
+	white-space: nowrap;
+	
+}
+
+#grid #header th>div {
 	-webkit-transform: rotate(-90deg);
   	-moz-transform: rotate(-90deg);
   	-ms-transform: rotate(-90deg);
@@ -75,10 +86,14 @@
 }
 
 #grid #content>table {
+
 }
 
 
-#grid #content td:hover {
+#grid #content td:hover,
+#grid #header th:hover,
+#grid #leftHeader td:hover 
+{
 	background-color: #FFF590;
 }
 

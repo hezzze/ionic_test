@@ -1,0 +1,7 @@
+#listsContainer {
+	height: 50%;
+}
+
+#listsContainer div.row {
+	height: 100%;
+}

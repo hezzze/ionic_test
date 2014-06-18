@@ -546,16 +546,16 @@ $split-pane-menu-border-color:    #eee !default;
 // Modals
 // -------------------------------
 
-$modal-bg-color:                  #fff !default;
-$modal-backdrop-bg-active:        rgba(0,0,0,0.5) !default;
-$modal-backdrop-bg-inactive:      rgba(0,0,0,0) !default;
+$ionic-modal-bg-color:                  #fff !default;
+$ionic-modal-backdrop-bg-active:        rgba(0,0,0,0.5) !default;
+$ionic-modal-backdrop-bg-inactive:      rgba(0,0,0,0) !default;
 
-$modal-inset-mode-break-point:    680px !default;  // @media min-width
-$modal-inset-mode-top:            20% !default;
-$modal-inset-mode-right:          20% !default;
-$modal-inset-mode-bottom:         20% !default;
-$modal-inset-mode-left:           20% !default;
-$modal-inset-mode-min-height:     240px !default;
+$ionic-modal-inset-mode-break-point:    680px !default;  // @media min-width
+$ionic-modal-inset-mode-top:            20% !default;
+$ionic-modal-inset-mode-right:          20% !default;
+$ionic-modal-inset-mode-bottom:         20% !default;
+$ionic-modal-inset-mode-left:           20% !default;
+$ionic-modal-inset-mode-min-height:     240px !default;
 
 
 // Grids
@@ -665,7 +665,7 @@ $z-index-item-reordering:         9 !default;
 $z-index-item-toggle:             3 !default;
 $z-index-loading:                 11 !default;
 $z-index-menu:                    0 !default;
-$z-index-modal:                   10 !default;
+$z-index-ionic-modal:             10 !default;
 $z-index-pane:                    1 !default;
 $z-index-popup:                   11 !default;
 $z-index-scroll-bar:              9999 !default;

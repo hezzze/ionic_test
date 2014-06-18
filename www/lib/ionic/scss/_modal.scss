@@ -5,54 +5,54 @@
  * Modals are independent windows that slide in from off-screen.
  */
 
-.modal-backdrop {
+.ionic-modal-backdrop {
   @include transition(background-color 300ms ease-in-out);
   position: fixed;
   top: 0;
   left: 0;
-  z-index: $z-index-modal;
+  z-index: $z-index-ionic-modal;
   width: 100%;
   height: 100%;
-  background-color: $modal-backdrop-bg-inactive;
+  background-color: $ionic-modal-backdrop-bg-inactive;
 
   &.active {
-    background-color: $modal-backdrop-bg-active;
+    background-color: $ionic-modal-backdrop-bg-active;
   }
 }
 
-.modal {
+.ionic-modal {
   position: absolute;
   top: 0;
-  z-index: $z-index-modal;
+  z-index: $z-index-ionic-modal;
   overflow: hidden;
   min-height: 100%;
   width: 100%;
-  background-color: $modal-bg-color;
+  background-color: $ionic-modal-bg-color;
 }
 
-@media (min-width: $modal-inset-mode-break-point) {
-  // inset mode is when the modal doesn't fill the entire
+@media (min-width: $ionic-modal-inset-mode-break-point) {
+  // inset mode is when the ionic-modal doesn't fill the entire
   // display but instead is centered within a large display
-  .modal {
-    top: $modal-inset-mode-top;
-    right: $modal-inset-mode-right;
-    bottom: $modal-inset-mode-bottom;
-    left: $modal-inset-mode-left;
+  .ionic-modal {
+    top: $ionic-modal-inset-mode-top;
+    right: $ionic-modal-inset-mode-right;
+    bottom: $ionic-modal-inset-mode-bottom;
+    left: $ionic-modal-inset-mode-left;
     overflow: visible;
-    min-height: $modal-inset-mode-min-height;
-    width: (100% - $modal-inset-mode-left - $modal-inset-mode-right);
+    min-height: $ionic-modal-inset-mode-min-height;
+    width: (100% - $ionic-modal-inset-mode-left - $ionic-modal-inset-mode-right);
   }
 
-  .modal.ng-leave-active {
+  .ionic-modal.ng-leave-active {
     bottom: 0;
   }
 }
 
-.modal-open {
+.ionic-modal-open {
   pointer-events: none;
 
-  .modal,
-  .modal-backdrop {
+  .ionic-modal,
+  .ionic-modal-backdrop {
     pointer-events: auto;
   }
 }

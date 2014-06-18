@@ -1,0 +1,73 @@
+#grid2 {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	margin: 1em 0 1em 1em;
+}
+
+#grid2>#headerList {
+	width: 9em;
+	-webkit-transform: rotate(-90deg);
+  	-moz-transform: rotate(-90deg);
+  	-ms-transform: rotate(-90deg);
+  	-o-transform: rotate(-90deg);
+  	transform: rotate(-90deg);
+  	height: 0.5em;
+  	position: relative;
+  	margin-left: 5.8em;
+  	margin-top: 4em;
+}
+
+#grid2>#headerList li {
+	height: 3em;
+	border-top: 1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+	background-color: #ffffff;
+}
+
+#grid2>#leftHeaderList {
+	position: relative;
+	margin-top: 4.5em;
+	width: 10em;
+	display: inline-block;
+	background-color: #ffffff;
+}
+
+#grid2>#leftHeaderList li {
+	height: 3em;
+	border-top: 1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+}
+
+#grid2>#content {
+	position: absolute;
+	left: 10em;
+	top: 9em;
+	width: 80%;
+	height: 70%;
+}
+
+#grid2>#content td:hover,
+#grid2>#headerList li:hover,
+#grid2>#leftHeaderList li:hover 
+{
+	background-color: #FFF590;
+}
+
+#grid2>#content>table {
+	/*quick and dirty fix for scrolling issues 
+	brought by bootstrap.css*/
+	max-width: none;
+	background-color: #ffffff;
+}
+
+#grid2>#content td {
+	text-align: center;
+	vertical-align: middle;
+	min-width: 3em;
+	max-width: 5em;
+	height: 3em;
+	border: 1px solid #c3c3c3;
+	background-color: #ffffff;
+}
+

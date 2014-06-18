@@ -1,16 +1,25 @@
 /* Empty. Add your own CSS if you like */
 
 #logo {
-	max-width: 60%;
-	max-height: 60%;
-	padding-left: 3%;
-	padding-top: 2%;
+    max-width: 60%;
+    max-height: 60%;
+    padding-left: 3%;
+    padding-top: 2%;
 }
 
 #navigation-text {
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
 #schedule-detail {
-	border-radius: 10px;
+    border-radius: 10px;
+}
+
+/*Original Bootstrap's CSS depends on empty href attributes to style cursors for several 
+components (pagination, tabs etc.). But in AngularJS adding empty href attributes to link 
+tags will cause unwanted route changes. This is why we need to remove empty href attributes 
+from directive templates and as a result styling is not applied correctly. The remedy is 
+simple, just add the following styling to your application:*/
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
 }
