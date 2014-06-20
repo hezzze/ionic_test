@@ -276,6 +276,10 @@ $tabs-default-text:               $tabs-stable-text !default;
 
 $tab-item-max-width:              150px !default;
 
+$tabs-striped-off-color: #000;
+$tabs-striped-off-opacity: 0.4;
+$tabs-striped-border-width: 4px;
+
 
 // Items
 // -------------------------------
@@ -546,16 +550,16 @@ $split-pane-menu-border-color:    #eee !default;
 // Modals
 // -------------------------------
 
-$ionic-modal-bg-color:                  #fff !default;
-$ionic-modal-backdrop-bg-active:        rgba(0,0,0,0.5) !default;
-$ionic-modal-backdrop-bg-inactive:      rgba(0,0,0,0) !default;
+$ion-modal-bg-color:                  #fff !default;
+$ion-modal-backdrop-bg-active:        rgba(0,0,0,0.5) !default;
+$ion-modal-backdrop-bg-inactive:      rgba(0,0,0,0) !default;
 
-$ionic-modal-inset-mode-break-point:    680px !default;  // @media min-width
-$ionic-modal-inset-mode-top:            20% !default;
-$ionic-modal-inset-mode-right:          20% !default;
-$ionic-modal-inset-mode-bottom:         20% !default;
-$ionic-modal-inset-mode-left:           20% !default;
-$ionic-modal-inset-mode-min-height:     240px !default;
+$ion-modal-inset-mode-break-point:    680px !default;  // @media min-width
+$ion-modal-inset-mode-top:            20% !default;
+$ion-modal-inset-mode-right:          20% !default;
+$ion-modal-inset-mode-bottom:         20% !default;
+$ion-modal-inset-mode-left:           20% !default;
+$ion-modal-inset-mode-min-height:     240px !default;
 
 
 // Grids
@@ -651,7 +655,7 @@ $badge-default-text:              #AAAAAA !default;
 
 $z-index-action-sheet:            11 !default;
 $z-index-badge:                   1 !default;
-$z-index-backdrop:                10 !default;
+$z-index-backdrop:                11 !default;
 $z-index-bar:                     10 !default;
 $z-index-bar-title:               0 !default;
 $z-index-bar-button:              1 !default;
@@ -663,15 +667,17 @@ $z-index-item-options:            1 !default;
 $z-index-item-radio:              3 !default;
 $z-index-item-reordering:         9 !default;
 $z-index-item-toggle:             3 !default;
-$z-index-loading:                 11 !default;
+$z-index-loading:                 13 !default;
 $z-index-menu:                    0 !default;
-$z-index-ionic-modal:             10 !default;
+$z-index-modal:                   10 !default;
 $z-index-pane:                    1 !default;
-$z-index-popup:                   11 !default;
+$z-index-popup:                   12 !default;
 $z-index-scroll-bar:              9999 !default;
+$z-index-scroll-content-false:    10 !default;
 $z-index-slider-pager:            1 !default;
 $z-index-tabs:                    5 !default;
 $z-index-view:                    1 !default;
+
 
 // Platform
 // -------------------------------

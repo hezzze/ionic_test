@@ -5,54 +5,54 @@
  * Modals are independent windows that slide in from off-screen.
  */
 
-.ionic-modal-backdrop {
+.ion-modal-backdrop {
   @include transition(background-color 300ms ease-in-out);
   position: fixed;
   top: 0;
   left: 0;
-  z-index: $z-index-ionic-modal;
+  z-index: $z-index-modal;
   width: 100%;
   height: 100%;
-  background-color: $ionic-modal-backdrop-bg-inactive;
+  background-color: $ion-modal-backdrop-bg-inactive;
 
   &.active {
-    background-color: $ionic-modal-backdrop-bg-active;
+    background-color: $ion-modal-backdrop-bg-active;
   }
 }
 
-.ionic-modal {
+.ion-modal {
   position: absolute;
   top: 0;
-  z-index: $z-index-ionic-modal;
+  z-index: $z-index-modal;
   overflow: hidden;
   min-height: 100%;
   width: 100%;
-  background-color: $ionic-modal-bg-color;
+  background-color: $ion-modal-bg-color;
 }
 
-@media (min-width: $ionic-modal-inset-mode-break-point) {
-  // inset mode is when the ionic-modal doesn't fill the entire
+@media (min-width: $ion-modal-inset-mode-break-point) {
+  // inset mode is when the modal doesn't fill the entire
   // display but instead is centered within a large display
-  .ionic-modal {
-    top: $ionic-modal-inset-mode-top;
-    right: $ionic-modal-inset-mode-right;
-    bottom: $ionic-modal-inset-mode-bottom;
-    left: $ionic-modal-inset-mode-left;
+  .ion-modal {
+    top: $ion-modal-inset-mode-top;
+    right: $ion-modal-inset-mode-right;
+    bottom: $ion-modal-inset-mode-bottom;
+    left: $ion-modal-inset-mode-left;
     overflow: visible;
-    min-height: $ionic-modal-inset-mode-min-height;
-    width: (100% - $ionic-modal-inset-mode-left - $ionic-modal-inset-mode-right);
+    min-height: $ion-modal-inset-mode-min-height;
+    width: (100% - $ion-modal-inset-mode-left - $ion-modal-inset-mode-right);
   }
 
-  .ionic-modal.ng-leave-active {
+  .ion-modal.ng-leave-active {
     bottom: 0;
   }
 }
 
-.ionic-modal-open {
+.ion-modal-open {
   pointer-events: none;
 
-  .ionic-modal,
-  .ionic-modal-backdrop {
+  .ion-modal,
+  .ion-modal-backdrop {
     pointer-events: auto;
   }
 }
