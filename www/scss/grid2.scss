@@ -1,4 +1,3 @@
-
 //This is the css width of the header, 
 // the rotation act as moving relatively
 // the element still occupies space 
@@ -90,7 +89,6 @@ $patchSize: 1em;
         position: absolute;
         left: $leftHeaderWidth;
         top: $headerDisplayHeight;
-        overflow: hidden;
         width: 78%;
         height: 70%;
         table {
@@ -109,7 +107,8 @@ $patchSize: 1em;
                 div.glyphicon.glyphicon-ok {
                  width: 100%;
                  height: 100%;
-             }
+                }
+
             }
         }
     }

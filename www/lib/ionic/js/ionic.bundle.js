@@ -37791,7 +37791,10 @@ function($rootScope, $document, $compile, $timeout, $ionicPlatform, $ionicTempla
 
     options.$el = element;
     options.el = element[0];
-    options.modalEl = options.el.querySelector('.modal');
+
+    /*Edit the class name to avoid confliction*/
+    options.modalEl = options.el.querySelector('.ion-modal');
+    
     var modal = new ModalView(options);
 
     modal.scope = scope;
@@ -42107,8 +42110,10 @@ IonicModule
     restrict: 'E',
     transclude: true,
     replace: true,
-    template: '<div class="modal-backdrop">' +
-                '<div class="modal-wrapper" ng-transclude></div>' +
+
+    /*Edit the class name to avoid confliction*/
+    template: '<div class="ion-modal-backdrop">' +
+                '<div class="ion-modal-wrapper" ng-transclude></div>' +
                 '</div>'
   };
 }]);

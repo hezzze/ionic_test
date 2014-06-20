@@ -14,10 +14,11 @@ angular.module('starter', ['ionic', 'starter.controllers']).run(function($ionicP
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
-    });
 
-    $window.addEventListener("touchmove", function(e) {
-        e.preventDefault();
+        //prevent the user from scrolling the entire screen
+        $window.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        });
     });
 })
 
@@ -59,16 +60,73 @@ angular.module('starter', ['ionic', 'starter.controllers']).run(function($ionicP
     $urlRouterProvider.otherwise('/home');
 })
 
-.directive('gridLoaded', function($timeout) {
+.directive('gridLoaded', function($timeout, $window) {
     return {
-      restrict:' A',
-      link: function(scope, element, attrs) {
-        if (scope.$parent.$last && scope.$last) {
+        restrict: ' A',
+        link: function(scope, element, attrs) {
+            if (scope.$parent.$last && scope.$last) {
 
-            $timeout(function() {
-              scope.$emit('scheduleGridRendered');
-            })
+                $timeout(function() {
+                    myScroll = new IScroll('#content', {
+                        bounce: false,
+                        scrollX: true,
+                        probeType: 3,
+                        scrollbars: true,
+                        mouseWheel: true,
+
+                        // quick fix for freezing issues on mobile chrome
+                        // Issue: opening modal might trigger the app into a state that 
+                        // iScroll handler would get a mousemove event instead of 
+                        // a touchmove 
+                        // related: angular bootstrap modal, iScroll 5
+
+                        disableMouse: 'ontouchstart' in $window
+                    });
+
+                    //debugger;
+
+                    //myScroll.on('scrollEnd', checkScroll(myScroll));
+
+                    var scrollHandler = function() {
+
+                        //debugger;
+
+                        console.log("scrolling!!...")
+
+                        if (myScroll.y > -10) {
+                            $('#horizontalPatchTop').removeClass('horizontalPatchTopBorder');
+                        }
+                        if (myScroll.y < -10) {
+                            $('#horizontalPatchTop').addClass('horizontalPatchTopBorder');
+                            if (myScroll.y !== myScroll.maxScrollY) {
+                                $('#horizontalPatchBottom').addClass('horizontalPatchBottomBorder');
+                            }
+                        }
+                        if (myScroll.y < myScroll.maxScrollY + 10) {
+                            $('#horizontalPatchBottom').removeClass('horizontalPatchBottomBorder');
+                        }
+                        if (myScroll.x > -10) {
+                            $('#verticalPatchLeft').removeClass('verticalPatchLeftBorder');
+                        }
+                        if (myScroll.x < -10) {
+                            $('#verticalPatchLeft').addClass('verticalPatchLeftBorder');
+                            if (myScroll.x !== myScroll.maxScrollX) {
+                                $('#verticalPatchRight').addClass('verticalPatchRightBorder');
+                            }
+                        }
+                        if (myScroll.x < myScroll.maxScrollX + 10) {
+                            $('#verticalPatchRight').removeClass('verticalPatchRightBorder');
+                        }
+
+                        $('#headerList').css('left', myScroll.x);
+                        $('#leftHeaderList').css('top', myScroll.y);
+                    }
+
+                    myScroll.on('scroll', scrollHandler);
+
+                    myScroll.on('scrollEnd', scrollHandler);
+                })
+            }
         }
-      }
     }
 });

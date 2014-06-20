@@ -24,7 +24,7 @@ angular.module('starter.controllers', ['ui.bootstrap'])
     //'$ionicModal',
     '$modal',
     function($scope, $rootScope, $stateParams,
-        //$ionicModal,
+        //$ionicModal
         $modal
     ) {
         var studyIndex = $stateParams.studyIndex;
@@ -36,19 +36,23 @@ angular.module('starter.controllers', ['ui.bootstrap'])
 
         attachGrid($scope);
 
-        // Use Ionic modal
+
+        //Use Ionic modal
         // $ionicModal.fromTemplateUrl('templates/schedule_modal.html', {
-        //   scope: $scope,
-        //   animation: 'slide-in-up'
-        // }).then(function (modal) {
-        //   $scope.modal = modal;
+        //     scope: $scope,
+        //     animation: 'slide-in-up'
+        // }).then(function(modal) {
+
+        //     $scope.schedule_modal = modal;
         // });
 
-        // $scope.openModal = function() {
-        //   $scope.modal.show();
-        // }
+
+        // $scope.openScheduleModal = function () {
+        //     $scope.schedule_modal.show();
+        // }    
 
 
+        //Using Bootstrap Modal
         var openModal = function(data, tplUrl, size) {
 
             var modalInstance = $modal.open({
@@ -77,52 +81,6 @@ angular.module('starter.controllers', ['ui.bootstrap'])
             var tplUrl = "templates/activity_modal.html";
             openModal(activity, tplUrl);
         }
-
-        $scope.$on('scheduleGridRendered', function() {
-
-            myScroll = new IScroll('#content', {
-                bounce: false,
-                scrollX: true,
-                probeType: 3,
-                scrollbars: true
-            });
-
-            //myScroll.on('scrollEnd', checkScroll(myScroll));
-
-            var scrollHandler = function() {
-                if (myScroll.y > -10) {
-                    $('#horizontalPatchTop').removeClass('horizontalPatchTopBorder');
-                }
-                if (myScroll.y < -10) {
-                    $('#horizontalPatchTop').addClass('horizontalPatchTopBorder');
-                    if (myScroll.y !== myScroll.maxScrollY) {
-                        $('#horizontalPatchBottom').addClass('horizontalPatchBottomBorder');
-                    }
-                }
-                if (myScroll.y < myScroll.maxScrollY + 10) {
-                    $('#horizontalPatchBottom').removeClass('horizontalPatchBottomBorder');
-                }
-                if (myScroll.x > -10) {
-                    $('#verticalPatchLeft').removeClass('verticalPatchLeftBorder');
-                }
-                if (myScroll.x < -10) {
-                    $('#verticalPatchLeft').addClass('verticalPatchLeftBorder');
-                    if (myScroll.x !== myScroll.maxScrollX) {
-                        $('#verticalPatchRight').addClass('verticalPatchRightBorder');
-                    }
-                }
-                if (myScroll.x < myScroll.maxScrollX + 10) {
-                    $('#verticalPatchRight').removeClass('verticalPatchRightBorder');
-                }
-
-                $('#headerList').css('left', myScroll.x);
-                $('#leftHeaderList').css('top', myScroll.y);
-            }
-
-            myScroll.on('scroll', scrollHandler);
-
-            myScroll.on('scroll', scrollHandler);
-        })
 
         // $(document).ready(function() {
 
