@@ -1,0 +1,151 @@
+
+//This is the css width of the header, 
+// the rotation act as moving relatively
+// the element still occupies space 
+// as it's orginal position 
+$headerWidth: 9em; 
+
+$headerHeight: 0.5em;
+$headerMarginLeft: 5.75em;
+$headerMarginTop: 4em;
+$barHeight: 44px;
+$leftHeaderWidth: $headerWidth/2 - $headerHeight/2 + $headerMarginLeft;
+$headerDisplayHeight: $headerHeight /2 + $headerMarginTop + $headerWidth/2;
+$cellWidth: 3em;
+$cellHeight: 3em; 
+$patchSize: 1em;
+
+
+@mixin patchSpec($width, $height, $left, $top) {
+    position: absolute;
+    width: $width;
+    height: $height;
+    left: $left;
+    top: $top;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+
+#grid2 {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    #patch {
+        @include patchSpec($leftHeaderWidth - 0.2em, 
+            $headerDisplayHeight - 0.25em, 0em, 0em);
+    }
+    #verticalPatchLeft {
+        @include patchSpec($patchSize, $headerDisplayHeight, 
+            $leftHeaderWidth - $patchSize, 0em);
+    }
+    #horizontalPatchTop {
+        @include patchSpec($leftHeaderWidth, $patchSize, 0em, 
+            $headerDisplayHeight - $patchSize);
+    }
+    #horizontalPatchBottom {
+        @include patchSpec($leftHeaderWidth, 20em, 0em, 70%);
+        margin-top: $headerHeight + $headerMarginTop + $headerWidth/2;
+    }
+    #verticalPatchRight {
+        @include patchSpec(20em, $headerDisplayHeight, 78%, 0em);
+        margin-left: $leftHeaderWidth;
+    }
+    #headerList {
+        width: $headerWidth;
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        height: $headerHeight;
+        position: relative;
+        margin-left: $headerMarginLeft;
+        margin-top: $headerMarginTop;
+        li {
+            height: $cellWidth;
+            border: 1px solid #eaeaea;
+            background-color: #eaeaea;
+            font-weight: bold;
+            padding-top: 0.5em;
+            span {
+                vertical-align: middle;
+            }
+        }
+    }
+    #leftHeaderList {
+        position: relative;
+        margin-top: $headerWidth/2 - $headerHeight/2;
+        width: $leftHeaderWidth;
+        display: inline-block;
+        background-color: #eaeaea;
+        li {
+            height: $cellHeight;
+            border: 1px solid #eaeaea;
+            text-align: center;
+            font-weight: bold;
+            padding-top: 0.5em;
+        }
+    }
+    #content {
+        position: absolute;
+        left: $leftHeaderWidth;
+        top: $headerDisplayHeight;
+        overflow: hidden;
+        width: 78%;
+        height: 70%;
+        table {
+            /*quick and dirty fix for scrolling issues 
+    brought by bootstrap.css*/
+            max-width: none;
+            background-color: #ffffff;
+            td {
+                text-align: center;
+                min-width: $cellWidth;
+                padding-top: 0.8em;
+                max-width: 5em;
+                height: $cellHeight;
+                border: 1px solid #c3c3c3;
+                background-color: #ffffff;
+                div.glyphicon.glyphicon-ok {
+                 width: 100%;
+                 height: 100%;
+             }
+            }
+        }
+    }
+}
+.verticalPatchLeftBorder {
+    box-shadow: 0px -21px 20px 8px #A09F9F;
+    border-right: 2px dashed #A09F9F;
+}
+.horizontalPatchTopBorder {
+    box-shadow: -21px 0px 20px 8px #A09F9F;
+    border-bottom: 2px dashed #A09F9F;
+}
+.horizontalPatchBottomBorder {
+    border-top: 2px dashed #A09F9F;
+    box-shadow: -27px 0px 20px 8px #A09F9F;
+}
+.verticalPatchRightBorder {
+    border-left: 2px dashed #A09F9F;
+    box-shadow: 0px -27px 20px 8px #A09F9F;
+}
+#grid2>#content td:hover, #grid2>#headerList li:hover, #grid2>#leftHeaderList li:hover {
+    background-color: #FFF590;
+}
+@media (min-width: 1024px) {
+    #grid2>#verticalPatchRight {
+        left: 83%;
+    }
+    #grid2>#content {
+        width: 83%;
+    }
+}
+@media (min-height: 900px) {
+    #grid2>#horizontalPatchBottom {
+        top: 78%;
+    }
+    #grid2>#content {
+        height: 78%;
+    }
+}

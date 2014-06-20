@@ -90,17 +90,29 @@ angular.module('starter.controllers', ['ui.bootstrap'])
             //myScroll.on('scrollEnd', checkScroll(myScroll));
 
             var scrollHandler = function() {
-                if (myScroll.y > -100) {
+                if (myScroll.y > -10) {
                     $('#horizontalPatchTop').removeClass('horizontalPatchTopBorder');
                 }
-                if (myScroll.y < -100) {
+                if (myScroll.y < -10) {
                     $('#horizontalPatchTop').addClass('horizontalPatchTopBorder');
                     if (myScroll.y !== myScroll.maxScrollY) {
                         $('#horizontalPatchBottom').addClass('horizontalPatchBottomBorder');
                     }
                 }
-                if (myScroll.y < myScroll.maxScrollY + 50) {
+                if (myScroll.y < myScroll.maxScrollY + 10) {
                     $('#horizontalPatchBottom').removeClass('horizontalPatchBottomBorder');
+                }
+                if (myScroll.x > -10) {
+                    $('#verticalPatchLeft').removeClass('verticalPatchLeftBorder');
+                }
+                if (myScroll.x < -10) {
+                    $('#verticalPatchLeft').addClass('verticalPatchLeftBorder');
+                    if (myScroll.x !== myScroll.maxScrollX) {
+                        $('#verticalPatchRight').addClass('verticalPatchRightBorder');
+                    }
+                }
+                if (myScroll.x < myScroll.maxScrollX + 10) {
+                    $('#verticalPatchRight').removeClass('verticalPatchRightBorder');
                 }
 
                 $('#headerList').css('left', myScroll.x);

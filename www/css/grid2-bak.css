@@ -1,0 +1,145 @@
+#grid2 {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+#grid2>#patch {
+    position: absolute;
+    width: 9.8em;
+    height: 8.5em;
+    left: 0em;
+    top: 0em;
+    background-color: rgba(255, 255, 255, 1);
+}
+#grid2>#verticalPatchLeft {
+    position: absolute;
+    width: 1em;
+    height: 9em;
+    left: 9em;
+    top: 0em;
+    background-color: rgba(255, 255, 255, 1);
+}
+.verticalPatchLeftBorder {
+    box-shadow: 0px -21px 20px 8px #A09F9F;
+    border-right: 2px dashed #A09F9F;
+}
+#grid2>#horizontalPatchTop {
+    position: absolute;
+    width: 10em;
+    height: 1em;
+    left: 0em;
+    top: 8em;
+    background-color: rgba(255, 255, 255, 1);
+}
+.horizontalPatchTopBorder {
+    box-shadow: -21px 0px 20px 8px #A09F9F;
+    border-bottom: 2px dashed #A09F9F;
+}
+#grid2>#horizontalPatchBottom {
+    position: absolute;
+    width: 10em;
+    height: 20em;
+    left: 0em;
+    top: 70%;
+    background-color: rgba(255, 255, 255, 1);
+    margin-top: 9em;
+}
+.horizontalPatchBottomBorder {
+    border-top: 2px dashed #A09F9F;
+    box-shadow: -27px 0px 20px 8px #A09F9F;
+}
+#grid2>#verticalPatchRight {
+    position: absolute;
+    width: 20em;
+    height: 9em;
+    top: 0em;
+    left: 78%;
+    margin-left: 10em;
+    background-color: rgba(255, 255, 255, 1);
+}
+.verticalPatchRightBorder {
+    border-left: 2px dashed #A09F9F;
+    box-shadow: 0px -27px 20px 8px #A09F9F;
+}
+#grid2>#headerList {
+    width: 9em;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    height: 0.5em;
+    position: relative;
+    margin-left: 5.8em;
+    margin-top: 4em;
+}
+#grid2>#headerList li {
+    height: 3em;
+    border: 1px solid #eaeaea;
+    background-color: #eaeaea;
+    font-weight: bold;
+    padding-top: 0.5em;
+}
+#grid2>#headerList li>span {
+    vertical-align: middle;
+}
+#grid2>#leftHeaderList {
+    position: relative;
+    margin-top: 4.5em;
+    width: 10em;
+    display: inline-block;
+    background-color: #eaeaea;
+}
+#grid2>#leftHeaderList li {
+    height: 3em;
+    border: 1px solid #eaeaea;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 0.5em;
+}
+#grid2>#content {
+    position: absolute;
+    left: 10em;
+    top: 9em;
+    overflow: hidden;
+    width: 78%;
+    height: 70%;
+}
+#grid2>#content td:hover, #grid2>#headerList li:hover, #grid2>#leftHeaderList li:hover {
+    background-color: #FFF590;
+}
+#grid2>#content>table {
+    /*quick and dirty fix for scrolling issues 
+    brought by bootstrap.css*/
+    max-width: none;
+    background-color: #ffffff;
+}
+#grid2>#content td {
+    text-align: center;
+    min-width: 3em;
+    padding-top: 0.8em;
+    max-width: 5em;
+    height: 3em;
+    border: 1px solid #c3c3c3;
+    background-color: #ffffff;
+}
+#grid2>#content td>div.glyphicon.glyphicon-ok {
+    width: 100%;
+    height: 100%;
+}
+@media (min-width: 1024px) {
+    #grid2>#verticalPatchRight {
+        left: 83%;
+    }
+    #grid2>#content {
+        width: 83%;
+    }
+}
+@media (min-height: 900px) {
+    #grid2>#horizontalPatchBottom {
+        top: 78%;
+    }
+    #grid2>#content {
+        height: 78%;
+    }
+}
